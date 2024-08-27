@@ -7,7 +7,7 @@ import re
 from KPC.classes import Error, BaseCheck
 
 data = [
-    {'msgid': 'Legal information\.',
+    {'msgid': r'Legal information\.',
      'msgstr': '법적 정보.'},
     {'msgid': 'As a special exception, the copyright holders give you ' +
               'permission to copy, modify, and distribute the example code ' +
@@ -15,18 +15,18 @@ data = [
               'choosing, without restriction.',
      'msgstr': '예외적으로, 이 문서에 들어 있는 예제 코드는 어떤 조건이든 제한 ' +
                '없이 복사, 수정, 배포할 수 있도록 저작권자가 특별히 허용합니다.'},
-    {'msgid': 'This work is distributed under a CreativeCommons ' +
-              'Attribution-Share Alike 3\.0 Unported license\.',
+    {'msgid': r'This work is distributed under a CreativeCommons ' +
+              r'Attribution-Share Alike 3\.0 Unported license\.',
      'msgstr': '이 문서는 크리에이티브 커먼즈 저작자표시-동일조건변경허락 ' +
                '3.0 Unported 라이선스로 배포됩니다.'},
-    {'msgid': 'Creative ?Commons Share ?Alike 3\.0',
+    {'msgid': r'Creative ?Commons Share ?Alike 3\.0',
      'msgstr': '크리에이티브 커먼즈 동일조건변경허락 3.0'},
-    {'msgid': 'Creative ?Commons Share ?Alike 3\.0 United States License',
+    {'msgid': r'Creative ?Commons Share ?Alike 3\.0 United States License',
      'msgstr': '크리에이티브 커먼즈 동일조건변경허락 3.0 미합중국 라이선스'},
-    {'msgid': 'Creative ?Commons Attribution-Share ?Alike 3\.0 United ' +
+    {'msgid': r'Creative ?Commons Attribution-Share ?Alike 3\.0 United ' +
               'States License',
      'msgstr': '크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 미합중국 라이선스'},
-    {'msgid': 'Creative ?Commons Attribution-Share ?Alike 3\.0 Unported ' +
+    {'msgid': r'Creative ?Commons Attribution-Share ?Alike 3\.0 Unported ' +
               'License',
      'msgstr': '크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 Unported 라이선스'},
     {'msgid': '<em>To share</em>',

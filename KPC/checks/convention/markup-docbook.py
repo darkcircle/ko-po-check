@@ -443,11 +443,10 @@ def check_db_tags(name):
     if name == 'KPC_DummyTag':
         pass
     elif name.startswith('placeholder-'):
-        # old gnome-doc-utils magic
+        # old gnome-doc-utils placeholders
         pass
-    elif (name.startswith('_:item-') or name.startswith('_:link-') or
-          name.startswith('_:ulink-')):
-        # newer gnome-doc-utils magic
+    elif name.startswith('_:'):
+        # newer gnome-doc-utils placeholders
         pass
     elif name not in known_db_tags:
         raise NotDocBook(name)

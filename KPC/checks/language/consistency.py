@@ -5,29 +5,29 @@ from KPC.classes import Error, BaseCheck
 
 data = [
     {
-        're': re.compile('.*[^\.]\.$'),
-        'except': re.compile('.*(\)|etc|No|a\.m|p\.m)\.$'),
+        're': re.compile(r'.*[^\.]\.$'),
+        'except': re.compile(r'.*(\)|etc|No|a\.m|p\.m)\.$'),
         'error':  Error('번역문이 원문과 같이 .으로 끝나야 합니다')
     },
     {
-        're': re.compile('.*:$'),
+        're': re.compile(r'.*:$'),
         'error':  Error('번역문이 원문과 같이 :으로 끝나야 합니다')
     },
     {
-        're': re.compile('.*[^\s]\.\.\.$'),
-        'except': re.compile('.*(etc)\.\.\.$'),
+        're': re.compile(r'.*[^\s]\.\.\.$'),
+        'except': re.compile(r'.*(etc)\.\.\.$'),
         'error':  Error('번역문이 원문과 같이 ...으로 끝나야 합니다')
     },
     {
-        're': re.compile('.*…$'),
+        're': re.compile(r'.*…$'),
         'error':  Error('번역문이 원문과 같이 …으로 끝나야 합니다')
     },
     {
-        're': re.compile('^[^"]*\u201c[^"]*\u201d[^"]*$'),
+        're': re.compile(r'^[^"]*\u201c[^"]*\u201d[^"]*$'),
         'error': Error('원문과 같은 유니코드 따옴표를 (U+201C, U+201D) 써야 합니다')
     },
     {
-        're': re.compile('^[^-]*\u2014[^-]*$'),
+        're': re.compile(r'^[^-]*\u2014[^-]*$'),
         'error': Error('원문과 같은 유니코드 대시문자를 (U+2014) 써야 합니다')
     },
 ]

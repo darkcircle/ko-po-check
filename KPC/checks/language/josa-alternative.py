@@ -12,17 +12,19 @@ josa_data = [('가', '이', '이(가)'),
              ('로써', '으로써', '(으)로써'),
              ('로부터', '으로부터', '(으)로부터'),
              ('라는', '이라는', '(이)라는')]
-c_format = '%(?:[1-9][0-9]*\$)?[-+ #\'0]*(?:[1-9][0-9]*)?(?:\.[0-9]+)?' \
-           '(?:(?:hh|h|j|l|L|ll|q|t|z|Z)?' \
-           '[dioufeEgGaAcCspnmhjlLqtxXzZ1-9]|hh|ll)'
-py_format = '%(?:\([A-Za-z]\w+\))?[#-0\ +]*(?:[0-9]+|\*)?(?:\.[0-9]+)?' \
-            '[hlL]?[diouxXeEfFgGcrs]'
+c_format = r'%(?:[1-9][0-9]*\$)?[-+ #\'0]*(?:[1-9][0-9]*)?(?:\.[0-9]+)?' \
+           r'(?:(?:hh|h|j|l|L|ll|q|t|z|Z)?' \
+           r'[dioufeEgGaAcCspnmhjlLqtxXzZ1-9]|hh|ll)'
+py_format = r'%(?:\([A-Za-z]\w+\))?[#-0\ +]*(?:[0-9]+|\*)?(?:\.[0-9]+)?' \
+            r'[hlL]?[diouxXeEfFgGcrs]'
 
 josa = '(?:' + '|'.join([p[0]+'|'+p[1] for p in josa_data]) + ')'
-josa_c_re = re.compile('(?P<case>(?P<fmt>'+c_format+'[\'\"\u2019\u201D]?) ?'
-                       '(?P<josa>'+josa+'))(?:\s|$)')
-josa_py_re = re.compile('(?P<case>(?P<fmt>'+py_format+'[\'\"\u2019\u201D]?) ?'
-                        '(?P<josa>'+josa+'))(?:\s|$)')
+josa_c_re = re.compile(r'(?P<case>(?P<fmt>'+ c_format +
+                       r'[\'\"\u2019\u201D]?) ?' +
+                       r'(?P<josa>' + josa + r'))(?:\s|$)')
+josa_py_re = re.compile(r'(?P<case>(?P<fmt>' + py_format +
+                        r'[\'\"\u2019\u201D]?) ?' +
+                        r'(?P<josa>' + josa + r'))(?:\s|$)')
 
 
 def josa_suggest(cho):

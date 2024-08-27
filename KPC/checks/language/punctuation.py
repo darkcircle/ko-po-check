@@ -5,7 +5,7 @@ from KPC.classes import Error, BaseCheck
 
 check_list = [
     {'check': lambda e: True not in [('.desktop' in p) for p in e.references],
-     're': re.compile('\s([A-Za-z\uac00-\ud7a3]*[\uac00-\ud7a3];)\s+',
+     're': re.compile(r'\s([A-Za-z\uac00-\ud7a3]*[\uac00-\ud7a3];)\s+',
                       re.UNICODE | re.MULTILINE),
      'msg': '우리말 맞춤법에서는 세미콜론을 쓰지 않습니다'},
 ]
